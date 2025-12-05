@@ -2,8 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "noEmit": false
+    "noEmit": false,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "target": "ES2020"
   },
   "include": ["server/**/*", "shared/**/*"],
-  "exclude": ["node_modules", "client"]
+  "exclude": ["node_modules", "client", "**/*.test.ts"]
 }
