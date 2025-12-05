@@ -2,10 +2,15 @@
   "name": "rest-express",
   "version": "1.0.0",
   "license": "MIT",
-  "type": "module",
+  "type": "commonjs",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && tsc -p tsconfig.build.json",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.build.json",
     "start": "node dist/server/index.js",
     "check": "tsc --noEmit",
     "db:push": "drizzle-kit push"
@@ -111,8 +116,5 @@
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
