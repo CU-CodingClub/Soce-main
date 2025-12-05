@@ -152,7 +152,7 @@ app.get("/api/health", (req: Request, res: Response) => {
   const port = parseInt(process.env.PORT || "8000", 10);
 const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
   
-  httpServer.listen(port, () => {
+ httpServer.listen(port, host, () => {
     log(`🚀 Hackathon server running on port ${port}`, "server");
     log(`📧 Email test: http://localhost:${port}/api/test-email`, "endpoints");
     log(`❤️  Health check: http://localhost:${port}/api/health`, "endpoints");
