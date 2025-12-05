@@ -71,7 +71,7 @@ export class MongoStorage implements IStorage {
   private db: any;
 
   constructor() {
-    this.client = new MongoClient(process.env.MONGODB_URI || 'mongodb://localhost:27017/CSE');
+    this.client = new MongoClient(process.env.MONGODB_URI || 'mongodb+srv://pandeyshashank039_db_user:CORzhNcyDkxfIWMb@cluster0.sbetcwr.mongodb.net/CSE?retryWrites=true&w=majority&appName=Cluster0');
     this.init();
   }
 

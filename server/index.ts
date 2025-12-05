@@ -150,6 +150,7 @@ app.get("/api/health", (req: Request, res: Response) => {
 
   // Server startup
   const port = parseInt(process.env.PORT || "8000", 10);
+const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
   
   httpServer.listen(port, () => {
     log(`🚀 Hackathon server running on port ${port}`, "server");
@@ -163,3 +164,16 @@ app.get("/api/health", (req: Request, res: Response) => {
     }
   });
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
